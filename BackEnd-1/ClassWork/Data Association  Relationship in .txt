@@ -1,0 +1,23 @@
+<> Data Association / Relationship in MongoDB
+
+> In MongoDB, managing relationships between data is crucial foe structuring and querying databases effectively.   Relationships can be handled using embedded documents, references and the $lookup aggregation stage , each offering different advantages depending on the use case .
+
+ -------                        -----
+|Student|-----(Object Id)----> |Marks|
+ -------      		        -----
+
+1. Embedded Document Model :
+> In this model , the documents are embedded inside one document . For example , we have two documents one is a student ( Which contains the basic information of the student like roll no , name branch , etc) and another is a marks document (Which contains the marks of different subjects).
+
+> So, instead of creating two documents we embedded the marks documents inside the student document 
+> It will help the user to retrieve the data using a single query rather than writing a bunch of queries.
+
+2. Reference Model : 
+> In this model we maintain documents separately but one document contains the reference of the other document.
+> For example : we have two documents , one is a student and another is a marks document 
+ < So, here student document contains the reference to the marks document's id field . Now using this reference id , we can query the marks and get the marks of students.
+ < This model is generally used to design the normalized relationships.
+
+3. $lookup
+  MongoDB's aggregation framework support joins between collections using the &lookup stage, enabling complex many-to-many relationships.
+                                                                                             		

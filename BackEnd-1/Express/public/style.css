@@ -1,0 +1,25 @@
+h1{
+    font-size: 50px;
+    text-align: center;
+}
+
+p{
+    font-size: 40px;
+    text-align: center;   
+}
+
+body{
+    background-color: aqua;
+}
+
+img{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    left: 40vw;
+}
+
+a:nth-of-type(1){
+    margin-left: 46vw;
+    padding: 5px;
+}

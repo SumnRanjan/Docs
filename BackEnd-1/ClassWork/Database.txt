@@ -1,0 +1,35 @@
+Database
+
+Q. What is Data?
+
+A. Data is statically raw & unprocessed information . Data is interchangeable info . In computer language , a piece of information that can be translated into a for efficient movement & processing is called data.
+
+Q. What is Database?
+
+A. A database is a collection of data that is organized , which is also called structured data. It can be accessed or stored in a computer systems .It can be managed through a Database Management System (DBMS)  , a form software used to manage data. It refers to related data in structured form.
+
+Q. What is Database Server?
+
+A. A database server is a type of hardware that runs database software. Database software helps users or companies to store manage , retrieve , update  or change files , information logs &  other forms of digital data.
+
+The two primary components of a database server are backend functions and client facing services . The backend of a data base stores all the digital files 
+and information . client services allow the people or companies using the database to access modify , add  to or monitor the data stored on the server.
+
+*Type of Database
+
+1. Centralized Database Server - It operates from one specific location . Larger Companies may use a centralized database server to access the server that control , store , organize and back-up their data quickly.
+
+2. De-centralized Database Server - Also known as Distributed Database Server These Server are spread on organization's  data across multiple servers. using more than one server to store company data can help make accessing various digital processes and information faster and more reliable.
+
+3. Cloud Database Server - A cloud database server connects users to their database server through the internet. Many database server providers use cloud computing databases to give users easy and fast access to their services.
+
+
+Database Vs DBMS
+
+1. Database - A database is an organized collection of structure data or information typically stored electronically in a computer System. It can include tables, queries , reports ,views and other objects that hold and manage data. in simple terms  , a database is like filling a cabinet where you store & organize you data in a structured manner for easy access & retrieval.
+
+2. DBMS- A DBMS is a software that provides an interface for users to interface 
+ 
+
+
+

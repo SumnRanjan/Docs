@@ -1,0 +1,20 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "start": "node fs.js",
+    "dev" : "AAgaya",
+    "test": "echo \"Error: no test specified Nothing found\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Suman Ranjan",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "chalk": "^5.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

@@ -1,0 +1,6 @@
+List Of API
+https://swapi.dev/documentation#base
+https://catfact.ninja/#/
+https://www.tvmaze.com/api
+
+https://api.openweathermap.org/data/2.5/weather?q=delhi&appid=d0cd0dca42a6051efd138f21e9c5c741

@@ -1,0 +1,151 @@
+Express
+Express JS 
+
+it is backend web application framework for building RESTful api with nodejs , released as free open-source software under MIT license
+
+it is also know as package
+
+It manages everything from receiving the request & giving  the response
+
+			request
+client <--------------------------------------> server
+			response                                                       
+
+Middleware : It is request handler that allows  you to intercept and manipulate request and response before  they reach route  handlers . they are 
+functions that are invoked by express JS routing layer. 
+
+Type of middleware
+
+1.Application-level Middleware -> app.use()
+2.Router-level Middleware
+3.Erro-Handling Middleware
+4.Built-in Middleware
+5.Third-Party Middleware
+
+
+Middleware Chaining - it can be defined as chaining of middleware written one after another . Hence creating a chain of a function that are executed in order .
+next() in express is responsible for calling the next middleware if there is one
+
+HTTP Status code -- These are the series of number and brief phrases that provide information on the status of url request . each code indicates
+a different type of response to  a request such as success , failure , redirect , client error , server error and information response..
+
+
+1. Informational responses (100 – 199) - 100 101 102 103
+
+2. Successful responses (200 – 299) - 200 201 202 203 204 205 206 207
+
+3. Redirection messages (300 – 399)
+
+4. Client error responses (400 – 499) -400 401 402 403 404 414 429
+ 
+5. Server error responses (500 – 599)   500 504 511
+
+
+
+@HTTP Request Method 
+
+1. GET*
+2. POST*
+3. PUT*
+4. PATCH*
+5. DELETE*
+6. HEAD
+7. OPTIONS
+8. TRACE
+9. CONNECT
+
+
+*Client-Server Architecture
+
+Types:
+
+1. 1-tier Arch
+2. 2-tier Arch
+3  3-tier Arch
+4. n-tier Arch
+
+--> P2P(peer2peer)
+--> Thin-Client Architecture 
+--> Flat-Client Architecture
+
+
+
+*Blocking & Non Blocking Code
+
+Q. What is Blocking Code ?
+
+A. it refers to the blocking of further operations until the current operation finishes Blocking methods executes synchronously.
+Example : readFileSync() , writeFileSync() , etc...
+
+Q. What IS Non Blocking Code ?
+A. it refers to the program that does not block the execution of further operation . Non Blocking methods are executes asynchronously.
+Example : readFile() , writeFile() , etc...
+
+
+*Session & Cookies 
+
+Q. What is Cookies ?
+A. These are small pieces of data stored on the clent's brower by websites they visit . They serve various purposes in web development , such as maintaining user session , personalizing user experience , and tracking user behavior. cookies are sent along with HTTP Request to the server , allowing websites to remember user preferences & state between different pages or visit..
+
+* Uses of cookies---
+
+1. Maintain State
+2. User Authentication
+3. Tracking
+4. User Behavior
+
+* Types of Cookies-----
+
+1. Session Cookies
+2. Persistent Cookies
+3. Secure Cookies
+4. Third-Party Cookies
+
+
+Q. What is Session ?
+A. A session is a mechanism for persisting data across multiple requests from the the same client . It allow servers to maintain stateful information about clients throughout their interaction with the application session are essential for tasks such as user authentication, storing user-specific data , and managing user information.
+
+
+Best Practises for Securing Session and & Cookies
+
+1. Use Secure Cookies
+2. Implement CSRF Protection
+3. Rotate Session Identifiers
+4. Implement Content Security Policy(CSP)
+5. Encrypt Session Data
+
+
+
+*EJS - (Embedded JavaScript)
+
+It is a Templating engine that helps to create an HTML template with  minimal code . Also , it can inject data into HTML template on the client side and produce the final HTML.
+	
+Features :
+
+-> Straightforward Syntax - Integrates seamlessly with javascript code.
+-> Easy Integration - Works well with NodeJS applications.
+-> partial Support - Allows reuse of templates across different parts of application
+-> Conditional and Loops - Support logical operation within templates.
+
+Uses :
+
+-> Server-Side Rendering - Generates dynamic web pages based on user input or database Queries.
+-> Dynamic Content Generation - Provides a lightweight solution for creating dynamic HTML content.
+
+Advantages:
+
+-> Simplicity - Easy to learn & use.
+-> Flexibility - Adaptable to various web development needs.
+
+
+
+
+
+
+
+
+
+
+
+
+

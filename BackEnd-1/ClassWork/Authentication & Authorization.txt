@@ -1,0 +1,11 @@
+Authentication & Authorization
+
+Authentication - It is the process of verifying the identity of a user . It answer the Question :  "Who are you ?" . In a Node JS application , this typically 
+involves validating user credentials , such as a username & password . The most common method of authentication. 
+
+Authentication best practices :
+
+
+
+
+Authorization - 

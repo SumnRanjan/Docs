@@ -1,0 +1,3 @@
+#Write a java program to print prime number between the range given by user
+#Write a java program to print random number in the range given by user
+#Write a java program to imp of function of atm in which the operation is choose by the user 

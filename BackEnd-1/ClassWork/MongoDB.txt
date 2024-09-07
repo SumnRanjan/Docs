@@ -1,0 +1,467 @@
+MongoDB
+
+It is an open-source document-oriented database that is designed to store a large-scale of data & also allows you to work with that data very efficiently.
+It is developed & managed by MongoDB Inc. under SSPL(Server Side Public License) and initially released in Feb , 2009.
+
+Companies - Facebook , eBay , Adobe , Google , Forbes , Shutterfly , Accenture , Uber , Toyota , Cisco , Zomato , TATA , etc..
+
+Features :
+1. Ad-hoc Queries
+2. Indexing
+3. Sharding
+4. Replication
+5. Load Balancing
+6. Aggregation Framework
+
+Advantages:
+
+1. Schema-less Database
+2. Document Queries
+3. Horizontal Scaling with Sharding
+4. Ease of Maintenance
+5. Replication & Workload Distribution
+6. Easy Environment & Quick Setup
+
+<> Disadvantages :
+> Limited Transaction Scope
+> Lacks in ACID compliance
+> Limited ion Capabilities
+> data Redundancy and Memory Usage
+> Document Size Limit : max 16 MB
+> Nested document Limit : max 100 levels
+
+<> terminologies in MongoDB : 
+> Collection : A collection is an equivalent to a RDBMS table . It store umber of document inside  . Since MongoDB is schema-less, collection do not have schema. we can store any number  documents in single collection and all of them have related purpose .
+
+> Document :  A document s  record in a Mongo-DB collection . It is comprised of a set of fields similar to row in a table in RDBMS.
+
+> Felds :  A fields in a Mongo-Db is a key-value pair inside a document . It can store various types of data , including string ,numbers ,arrays ,and other documents, Fields in MongoDB can be seen as columns in RDBMS.
+
+> Schema : While MongoDB is Schema-less , SQL defines a schema via the table definition. A mongoose schema in a document data structure that is enforced via the application layer.
+
+> Models : Models are higher order constructure that take a schema and create an instance of document equivalent to records in relational database .
+
+<> Data Types in MongoDB : It has a unique way of representing datatypes in which each data-type is associated with an alias as well as a number that is usually use to search or find any specific record with a MongoDB database .
+
+> Integer : db.collection.insert({"Integer":99})
+> Boolean : db.collection.insert({"Boolean":True})  
+> Double : db.collection.insert({"Double":99.99}) 
+> String : db.collection.insert({"String":"This is a sample msg."})
+> Array : google kr lena
+> Object : //
+> Null : //
+> Date : //
+
+<> Mongoose : It is an Object-Data-Modeling (ODM) library for MongoDB and NodeJS. It manages Relationships between data , provides schema validation , and is use to translate between objects in code and the representation of those objects in MongoDB.
+
+<> Advantages of Mongoose : 
+> Easy Translation between documents ad JS objects with its schema=based modeling
+> Buit-inType casing and validation to reduce errors 
+> Helper methods for common tasks like querying ,updating records ,etc. 
+> Easy connection handling for setting up MongoDB communication.
+> Additional feature like middleware for interacting with data pre-save/post-save.
+
+
+<> GRUD Operations : 
+ > Create : 			> Update : 
+ < insertOne()			< updateOne()
+ < insertMany()			< updateMany()
+
+
+ > Read :			> Delete :
+ < find()			< deleteOne()
+ < findOne()			< DROP()
+
+
+
+
+
+
+//
+------Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\suman\OneDrive\Desktop> mongosh
+Current Mongosh Log ID: 66b22e733aed94ffa1228fb4
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.15
+Using MongoDB:          7.0.12
+Using Mongosh:          2.2.15
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-08-06T19:38:21.407+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show dbs
+admin   40.00 KiB
+config  12.00 KiB
+local   40.00 KiB
+test> use student
+switched to db student
+student> db.student.insertOne({"name" : "sam"});
+{
+  acknowledged: true,
+  insertedId: ObjectId('66b22f183aed94ffa1228fb5')
+}
+student> db.student.find();
+[ { _id: ObjectId('66b22f183aed94ffa1228fb5'), name: 'sam' } ]
+student> db.student.insertOne({name : "sumi"});
+{
+  acknowledged: true,
+  insertedId: ObjectId('66b22f9d3aed94ffa1228fb6')
+}
+student> db.student.find();
+[
+  { _id: ObjectId('66b22f183aed94ffa1228fb5'), name: 'sam' },
+  { _id: ObjectId('66b22f9d3aed94ffa1228fb6'), name: 'sumi' }
+]
+student> db.student.insertOne({name : "suman"});
+{
+  acknowledged: true,
+  insertedId: ObjectId('66b22fa73aed94ffa1228fb7')
+}
+student> db.student.insertOne({name : "sanchit"});
+{
+  acknowledged: true,
+  insertedId: ObjectId('66b22fae3aed94ffa1228fb8')
+}
+student> db.student.find();
+[
+  { _id: ObjectId('66b22f183aed94ffa1228fb5'), name: 'sam' },
+  { _id: ObjectId('66b22f9d3aed94ffa1228fb6'), name: 'sumi' },
+  { _id: ObjectId('66b22fa73aed94ffa1228fb7'), name: 'suman' },
+  { _id: ObjectId('66b22fae3aed94ffa1228fb8'), name: 'sanchit' }
+]
+student> db.student.insertOne({rollno : 101 , name : "sanchit" , age:25});
+{
+  acknowledged: true,
+  insertedId: ObjectId('66b2302e3aed94ffa1228fb9')
+}
+student> db.student.find();
+[
+  { _id: ObjectId('66b22f183aed94ffa1228fb5'), name: 'sam' },
+  { _id: ObjectId('66b22f9d3aed94ffa1228fb6'), name: 'sumi' },
+  { _id: ObjectId('66b22fa73aed94ffa1228fb7'), name: 'suman' },
+  { _id: ObjectId('66b22fae3aed94ffa1228fb8'), name: 'sanchit' },
+  {
+    _id: ObjectId('66b2302e3aed94ffa1228fb9'),
+    rollno: 101,
+    name: 'sanchit',
+    age: 25
+  }
+]
+student> db.student.insertOne({rollno : 102 , name : "sanchi" , age:24});
+{
+  acknowledged: true,
+  insertedId: ObjectId('66b230783aed94ffa1228fba')
+}
+student> db.student.find();
+[
+  { _id: ObjectId('66b22f183aed94ffa1228fb5'), name: 'sam' },
+  { _id: ObjectId('66b22f9d3aed94ffa1228fb6'), name: 'sumi' },
+  { _id: ObjectId('66b22fa73aed94ffa1228fb7'), name: 'suman' },
+  { _id: ObjectId('66b22fae3aed94ffa1228fb8'), name: 'sanchit' },
+  {
+    _id: ObjectId('66b2302e3aed94ffa1228fb9'),
+    rollno: 101,
+    name: 'sanchit',
+    age: 25
+  },
+  {
+    _id: ObjectId('66b230783aed94ffa1228fba'),
+    rollno: 102,
+    name: 'sanchi',
+    age: 24
+  }
+]
+student> db.student.insertMany([{name : "Aman" , city : "Deoghar"} , {name : "love" , city : "Mohali"} , {rollno : 1 , name : "suman" , age : 18}]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66b2322c3aed94ffa1228fbb'),
+    '1': ObjectId('66b2322c3aed94ffa1228fbc'),
+    '2': ObjectId('66b2322c3aed94ffa1228fbd')
+  }
+}
+student> db.student.find();
+[
+  { _id: ObjectId('66b22f183aed94ffa1228fb5'), name: 'sam' },
+  { _id: ObjectId('66b22f9d3aed94ffa1228fb6'), name: 'sumi' },
+  { _id: ObjectId('66b22fa73aed94ffa1228fb7'), name: 'suman' },
+  { _id: ObjectId('66b22fae3aed94ffa1228fb8'), name: 'sanchit' },
+  {
+    _id: ObjectId('66b2302e3aed94ffa1228fb9'),
+    rollno: 101,
+    name: 'sanchit',
+    age: 25
+  },
+  {
+    _id: ObjectId('66b230783aed94ffa1228fba'),
+    rollno: 102,
+    name: 'sanchi',
+    age: 24
+  },
+  {
+    _id: ObjectId('66b2322c3aed94ffa1228fbb'),
+    name: 'Aman',
+    city: 'Deoghar'
+  },
+  {
+    _id: ObjectId('66b2322c3aed94ffa1228fbc'),
+    name: 'love',
+    city: 'Mohali'
+  },
+  {
+    _id: ObjectId('66b2322c3aed94ffa1228fbd'),
+    rollno: 1,
+    name: 'suman',
+    age: 18
+  }
+]
+student> db.student.find({name : "suman"});
+[
+  { _id: ObjectId('66b22fa73aed94ffa1228fb7'), name: 'suman' },
+  {
+    _id: ObjectId('66b2322c3aed94ffa1228fbd'),
+    rollno: 1,
+    name: 'suman',
+    age: 18
+  }
+]
+student> db.student.findOne({name : "suman"});
+{ _id: ObjectId('66b22fa73aed94ffa1228fb7'), name: 'suman' }
+student>
+
+student> db.student.updateOne({name : "suman" } , {$set{name : "Tanvi"})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:46)
+
+> 1 | db.student.updateOne({name : "suman" } , {$set{name : "Tanvi"})
+    |                                               ^
+  2 |
+
+student> db.student.updateOne({name : "suman" } , {$set:{name : "Tanvi"})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:63)
+
+> 1 | db.student.updateOne({name : "suman" } , {$set:{name : "Tanvi"})
+    |                                                                ^
+  2 |
+
+student> db.student.updateOne({name : "suman" } , {$set:{name : "Tanvi"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+student> db.student.find();
+[
+  { _id: ObjectId('66b22f183aed94ffa1228fb5'), name: 'sam' },
+  { _id: ObjectId('66b22f9d3aed94ffa1228fb6'), name: 'sumi' },
+  { _id: ObjectId('66b22fa73aed94ffa1228fb7'), name: 'Tanvi' },
+  { _id: ObjectId('66b22fae3aed94ffa1228fb8'), name: 'sanchit' },
+  {
+    _id: ObjectId('66b2302e3aed94ffa1228fb9'),
+    rollno: 101,
+    name: 'sanchit',
+    age: 25
+  },
+  {
+    _id: ObjectId('66b230783aed94ffa1228fba'),
+    rollno: 102,
+    name: 'sanchi',
+    age: 24
+  },
+  {
+    _id: ObjectId('66b2322c3aed94ffa1228fbb'),
+    name: 'Aman',
+    city: 'Deoghar'
+  },
+  {
+    _id: ObjectId('66b2322c3aed94ffa1228fbc'),
+    name: 'love',
+    city: 'Mohali'
+  },
+  {
+    _id: ObjectId('66b2322c3aed94ffa1228fbd'),
+    rollno: 1,
+    name: 'suman',
+    age: 18
+  }
+]
+student> db.student.updateOne({rollno : 1 } , {$set:{name : "Suman Don"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+student> db.student.find();
+[
+  { _id: ObjectId('66b22f183aed94ffa1228fb5'), name: 'sam' },
+  { _id: ObjectId('66b22f9d3aed94ffa1228fb6'), name: 'sumi' },
+  { _id: ObjectId('66b22fa73aed94ffa1228fb7'), name: 'Tanvi' },
+  { _id: ObjectId('66b22fae3aed94ffa1228fb8'), name: 'sanchit' },
+  {
+    _id: ObjectId('66b2302e3aed94ffa1228fb9'),
+    rollno: 101,
+    name: 'sanchit',
+    age: 25
+  },
+  {
+    _id: ObjectId('66b230783aed94ffa1228fba'),
+    rollno: 102,
+    name: 'sanchi',
+    age: 24
+  },
+  {
+    _id: ObjectId('66b2322c3aed94ffa1228fbb'),
+    name: 'Aman',
+    city: 'Deoghar'
+  },
+  {
+    _id: ObjectId('66b2322c3aed94ffa1228fbc'),
+    name: 'love',
+    city: 'Mohali'
+  },
+  {
+    _id: ObjectId('66b2322c3aed94ffa1228fbd'),
+    rollno: 1,
+    name: 'Suman Don',
+    age: 18
+  }
+]
+student> db.student.updateMany({rollno : 1 } , {$set:{name : "Suman Don"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+student> db.student.insertMany([{name : "Ashi" , city : "Deoghar"} , {name : "Aryan" , city : "Deoghar"}]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66b235663aed94ffa1228fbe'),
+    '1': ObjectId('66b235663aed94ffa1228fbf')
+  }
+}
+student> db.student.updateMany({city : Deoghar } , {$set:{ city : "Deoghar15"}})
+ReferenceError: Deoghar is not defined
+student> db.student.updateMany({city : "Deoghar" } , {$set:{ city : "Deoghar15"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+student> db.student.find();
+[
+  { _id: ObjectId('66b22f183aed94ffa1228fb5'), name: 'sam' },
+  { _id: ObjectId('66b22f9d3aed94ffa1228fb6'), name: 'sumi' },
+  { _id: ObjectId('66b22fa73aed94ffa1228fb7'), name: 'Tanvi' },
+  { _id: ObjectId('66b22fae3aed94ffa1228fb8'), name: 'sanchit' },
+  {
+    _id: ObjectId('66b2302e3aed94ffa1228fb9'),
+    rollno: 101,
+    name: 'sanchit',
+    age: 25
+  },
+  {
+    _id: ObjectId('66b230783aed94ffa1228fba'),
+    rollno: 102,
+    name: 'sanchi',
+    age: 24
+  },
+  {
+    _id: ObjectId('66b2322c3aed94ffa1228fbb'),
+    name: 'Aman',
+    city: 'Deoghar15'
+  },
+  {
+    _id: ObjectId('66b2322c3aed94ffa1228fbc'),
+    name: 'love',
+    city: 'Mohali'
+  },
+  {
+    _id: ObjectId('66b2322c3aed94ffa1228fbd'),
+    rollno: 1,
+    name: 'Suman Don',
+    age: 18
+  },
+  {
+    _id: ObjectId('66b235663aed94ffa1228fbe'),
+    name: 'Ashi',
+    city: 'Deoghar15'
+  },
+  {
+    _id: ObjectId('66b235663aed94ffa1228fbf'),
+    name: 'Aryan',
+    city: 'Deoghar15'
+  }
+]
+student> db.student.deleteOne(rollno : 101 )
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:28)
+
+> 1 | db.student.deleteOne(rollno : 101 )
+    |                             ^
+  2 |
+
+student> db.student.deleteOne({rollno : 101} )
+{ acknowledged: true, deletedCount: 1 }
+student> db.student.find();
+[
+  { _id: ObjectId('66b22f183aed94ffa1228fb5'), name: 'sam' },
+  { _id: ObjectId('66b22f9d3aed94ffa1228fb6'), name: 'sumi' },
+  { _id: ObjectId('66b22fa73aed94ffa1228fb7'), name: 'Tanvi' },
+  { _id: ObjectId('66b22fae3aed94ffa1228fb8'), name: 'sanchit' },
+  {
+    _id: ObjectId('66b230783aed94ffa1228fba'),
+    rollno: 102,
+    name: 'sanchi',
+    age: 24
+  },
+  {
+    _id: ObjectId('66b2322c3aed94ffa1228fbb'),
+    name: 'Aman',
+    city: 'Deoghar15'
+  },
+  {
+    _id: ObjectId('66b2322c3aed94ffa1228fbc'),
+    name: 'love',
+    city: 'Mohali'
+  },
+  {
+    _id: ObjectId('66b2322c3aed94ffa1228fbd'),
+    rollno: 1,s
+    name: 'Suman Don',
+    age: 18
+  },
+  {
+    _id: ObjectId('66b235663aed94ffa1228fbe'),
+    name: 'Ashi',
+    city: 'Deoghar15'
+  },
+  {
+    _id: ObjectId('66b235663aed94ffa1228fbf'),
+    name: 'Aryan',
+    city: 'Deoghar15'
+  }
+]
+student> db.dropDatabase();
+{ ok: 1, dropped: 'student' }
+student> show dbs
+admin    40.00 KiB
+config  108.00 KiB
+local    72.00 KiB
+student>

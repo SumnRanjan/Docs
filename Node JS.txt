@@ -1,0 +1,19 @@
+Node JS - JS Runtime Environment...
+Ryan Dahl create NodeJS in 2009 using Google Chrome using V8 Engine...
+
+JS ----> JS Wrapper ----> V8 Engine ----> Server
+
+JS Wrapper + V8 Engine = Node JS.
+
+NPM - Node Package Manager - 2010.
+It is tool that comes bunded with Node JS.
+
+NPM is used to manage packages & dependencies for Node JS projects making it easier to install & update libraries & frameworks...
+
+Modules - Things install in Node JS core.
+
+Package - Things install via NPM.
+
+Dependencies - Project Packages & their dependencies.
+
+Dev-Dependencies - Those packages that are needed while development state but they are of no use after Deployment
